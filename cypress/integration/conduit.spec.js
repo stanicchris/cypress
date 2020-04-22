@@ -19,4 +19,9 @@ describe('the conduit application', () => {
         cy.visit('/')
         cy.contains('No articles are here... yet.')
       })
+    
+    it('shows some posts', () => {
+        cy.visit('/')
+        cy.get('.article-preview').should('have.length', 10)
+      })
   })
